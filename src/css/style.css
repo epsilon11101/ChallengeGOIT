@@ -42,3 +42,33 @@ body {
   width: 2rem;
   height: 2rem;
 }
+
+footer {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  width: 100%;
+  color: white;
+  font-family: "starjedi";
+
+}
+
+footer a {
+  text-decoration: none;
+  color: red;
+}
+
+footer a:hover {
+  color: #FFE81F;
+}
+
+footer a:active {
+  color: #FFE81F;
+}
+
+footer a:visited {
+  color: purple;
+}
+
+footer a:visited:hover {
+  color: #FFE81F;
+}
