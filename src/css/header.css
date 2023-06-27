@@ -1,0 +1,33 @@
+#header .navbar {
+    background-color: black;
+    box-shadow: 0 0 1rem red;
+    background-image: url("../assets/mainPage/starsbg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+
+#header .navbar .navbar-brand {
+    font-family: "starjedi";
+    font-size: 2rem;
+    color: #FFE81F;
+
+}
+
+#header #navbarNav {
+    background-color: rgba(0, 0, 0, 0.63);
+}
+
+
+#header .navbar-toggler {
+    background-color: #FFE81F;
+}
+
+#header .navbar .nav-item .nav-link {
+    text-transform: uppercase;
+    font-family: "starjediout";
+    font-size: 1rem;
+    color: #FFE81F;
+}

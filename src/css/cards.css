@@ -1,0 +1,58 @@
+#home_main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-family: "starjedi";
+    font-size: 2rem;
+}
+
+#home_main .card {
+    width: 20rem;
+    height: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    border: 1px solid red;
+    box-shadow: 0 0 1rem red;
+}
+
+#home_main .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+#home_main .card:hover {
+    background-color: #000;
+    border: 1px solid #FFE81F;
+    box-shadow: 0 0 1rem #FFE81F;
+    cursor: pointer;
+
+}
+
+
+
+#home_main .card:hover .card-body {
+    color: #FFE81F;
+}
+
+
+#home_main .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: red;
+}
+
+#home_main #cards {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}

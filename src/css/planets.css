@@ -1,0 +1,88 @@
+#planets {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-family: "starjedi";
+    font-size: 2rem;
+    width: 100%;
+}
+
+#planetsContainer {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 1rem 1rem;
+}
+
+
+.uniquePlanet {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+.uniquePlanet .pcollapse {
+    width: 50%;
+}
+
+.uniquePlanet a {
+    width: 100%;
+    color: white;
+    font-size: 0.7rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    background-color: red;
+}
+
+
+.card {
+    max-width: 100%;
+    height: 350px;
+    background-color: black;
+    box-shadow: 0 0 1rem red;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.card h6 {
+    color: white;
+    text-shadow: 0 0 1rem red;
+}
+
+.card p {
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.7rem;
+    max-width: 100%;
+
+}
+
+.pagination {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.pagination .btn {
+    color: white;
+    background-color: red;
+    font-family: "starjedi";
+}

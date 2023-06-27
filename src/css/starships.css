@@ -1,0 +1,89 @@
+#starship {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-family: "starjedi";
+    font-size: 2rem;
+    width: 100%;
+}
+
+#starshipsContainer {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 1rem 1rem;
+}
+
+
+.uniquestarships {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+.uniquestarships .pcollapse {
+    width: 100%;
+
+}
+
+.uniquestarships a {
+    width: 100%;
+    color: black;
+    font-size: 0.7rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    background-color: rgb(74, 241, 7);
+}
+
+
+.card {
+    max-width: 100%;
+    height: 425px;
+    background-color: black;
+    box-shadow: 0 0 1rem rgb(74, 241, 7);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.card h6 {
+    color: white;
+    text-shadow: 0 0 1rem rgb(74, 241, 7);
+}
+
+.card p {
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.7rem;
+    max-width: 100%;
+
+}
+
+.pagination {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.pagination .btn {
+    color: white;
+    background-color: rgb(74, 241, 7);
+    font-family: "starjedi";
+}
