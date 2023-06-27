@@ -1,4 +1,8 @@
 import "../css/header.css";
+import { footer } from "./UI";
+
+const mainElement = document.querySelector("main");
+mainElement.insertAdjacentHTML("afterend", footer());
 
 document.querySelector("#header").innerHTML = `
       <nav class="navbar  navbar-expand-lg">
