@@ -1,0 +1,150 @@
+#filmsInfo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#filmsInfo #infoWrapper {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+}
+
+#filmsInfo #infoWrapper #film {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#filmsInfo #infoWrapper #film img {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 0 0 1rem blue;
+}
+
+#filmsInfo #infoWrapper #film h2 {
+    text-transform: lowercase;
+    font-size: 2rem;
+    color: #FFE81F;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: "starjhol";
+
+}
+
+#filmsInfo #infoWrapper #film #film_info {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    padding: 2rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2rem;
+    gap: 2rem;
+    color: #FFE81F;
+}
+
+#filmsInfo #infoWrapper #infoContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+
+
+}
+
+#filmsInfo #infoWrapper #infoContainer #characters {
+
+    width: 30% !important;
+    background-color: transparent;
+    border-color: purple;
+    box-shadow: 0 0 1rem purple;
+    padding: 1rem;
+}
+
+#filmsInfo #infoWrapper #infoContainer #characters .card-title {
+    text-align: center;
+    text-transform: lowercase;
+    font-size: 2rem;
+    font-family: "starjhol";
+    color: purple;
+}
+
+#filmsInfo #infoWrapper #infoContainer #characters .card-body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+    padding: 0;
+    margin: 0;
+
+}
+
+
+#filmsInfo #infoWrapper #infoContainer #characters .card-body ul {
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    gap: 2rem;
+    background-color: transparent;
+}
+
+#filmsInfo #infoWrapper #infoContainer #characters .card-body ul li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    min-width: 100%;
+    min-height: 100%;
+    text-align: center;
+}
+
+#filmsInfo #infoWrapper #infoContainer #characters .card-body ul li .avatarWrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 0.6rem;
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    margin-top: 1rem;
+}
+
+#filmsInfo #infoWrapper #infoContainer #characters .card-body ul li img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    box-shadow: 0 0 1rem purple;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}

@@ -1,0 +1,1 @@
+import "../css/filmsInfo.css";
