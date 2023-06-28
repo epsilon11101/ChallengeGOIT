@@ -12,6 +12,7 @@ export default defineConfig({
         species: resolve(__dirname, "src/pages/species.html"),
         starships: resolve(__dirname, "src/pages/starships.html"),
         vehicles: resolve(__dirname, "src/pages/vehicles.html"),
+        info: resolve(__dirname, "src/pages/info.html"),
       },
     },
   },
