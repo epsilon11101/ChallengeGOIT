@@ -4,12 +4,12 @@ import { getCharacters } from "../services/swapi";
 import { progressTemplate } from "./UI";
 
 localStorage.setItem("contador", "1");
+
 const main = document.querySelector("main");
 main.insertAdjacentHTML("afterbegin", progressTemplate());
 const charactersContainer = document.querySelector("#characters");
 const loadMoreBtn = document.querySelector("#load_more");
 const loadLessBtn = document.querySelector("#load_less");
-
 const spinner = document.querySelector(".spinner");
 
 const characterTemplate = (character, id) => {
@@ -22,12 +22,13 @@ const characterTemplate = (character, id) => {
     eye_color,
     birth_year,
     gender,
+    url,
   } = character;
 
   return `
   <div class="uniqueCharacter ">
-        <p class="pcollapse">
-            <a class="btn " role="button">${name}</a>
+        <p class="pcollapse" data-url=${url}>
+            <a class="btn " role="button" >${name}</a>
         </p>
         <div class="col">
             <div class="" id="char${id}">
@@ -50,7 +51,6 @@ const characterTemplate = (character, id) => {
   <div>
     `;
 };
-
 createLoadButtonEventListener(
   loadMoreBtn,
   getCharacters,
@@ -67,7 +67,6 @@ createLoadButtonEventListener(
   spinner,
   main
 );
-
 fetchResource(
   1,
   getCharacters,
@@ -76,3 +75,13 @@ fetchResource(
   spinner,
   main
 );
+
+charactersContainer.addEventListener("click", (e) => {
+  const character = e.target.closest(".pcollapse");
+  if (character) {
+    const characterUrl = character.dataset.url;
+    const encodedUrl = encodeURIComponent(characterUrl);
+    console.log(encodedUrl);
+    window.location.href = `./info.html?character=${encodedUrl}`;
+  }
+});
