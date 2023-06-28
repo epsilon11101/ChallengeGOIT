@@ -1,8 +1,8 @@
 const messages = [
-  "Be patient...",
-  "Calm Jedi...",
-  "We're almost there...",
-  "Just a little more...",
+  "Patient, be...",
+  "Calm, Jedi...",
+  "There, almost we are...",
+  "Just a little more, there is...",
 ];
 
 export const progressTemplate = () => {
