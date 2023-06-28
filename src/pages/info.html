@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>INFO</title>
+
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+            crossorigin="anonymous" />
+        <link rel="stylesheet" href="../css/fonts.css" />
+        <link rel="stylesheet" href="../css/style.css" />
+    </head>
+    <body>
+        <header id="header" class="container-fluid"></header>
+        <main id="characters_info">
+            <div class="spinner-border text-warning hide" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <div id="characterWrapper">
+                <div id="character">
+
+                </div>
+                <div id="infoContainer">
+                    <div id="film">
+                        <h2>films</h2>
+
+                    </div>
+                    <div id="planet">
+                        <h2>planet</h2>
+                    </div>
+                    <div id="specie">
+                        <h2>specie</h2>
+                    </div>
+                    <div id="starships">
+                        <h2>starships</h2>
+
+                    </div>
+                    <div id="vehicles">
+                        <h2>vehicles</h2>
+
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <script type="module" src="../components/header.js"></script>
+        <script type="module" src="../components/info.js"></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+            crossorigin="anonymous"></script>
+    </body>
+</html>
