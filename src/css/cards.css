@@ -46,6 +46,7 @@
     justify-content: center;
     align-items: center;
     color: red;
+    text-transform: lowercase;
 }
 
 #home_main #cards {

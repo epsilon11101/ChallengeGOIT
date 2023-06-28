@@ -17,22 +17,22 @@ document.querySelector("#header").innerHTML = `
             <ul class="navbar-nav">
 
               <li class="nav-item">
-                <a class="nav-link" href="/src/pages/characters.html">CHARACTERS</a>
+                <a class="nav-link" href="/src/pages/characters.html">characters</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/src/pages/films.html">FILMS</a>
+                <a class="nav-link" href="/src/pages/films.html">films</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/src/pages/species.html">SPECIES</a>
+                <a class="nav-link" href="/src/pages/species.html">species</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/src/pages/starships.html">STARSHIPS</a>
+                <a class="nav-link" href="/src/pages/starships.html">starships</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/src/pages/vehicles.html">VEHICLES</a>
+                <a class="nav-link" href="/src/pages/vehicles.html">vehicles</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/src/pages/planets.html">PLANETS</a>
+                <a class="nav-link" href="/src/pages/planets.html">planets</a>
               </li>
 
             </ul>
