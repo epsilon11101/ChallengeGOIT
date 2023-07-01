@@ -12,13 +12,6 @@ const getAllData = async (field) => {
   return characters;
 };
 
-const getCharacters = async (page) => {
-  const response = await fetch(`https://swapi.dev/api/people/?page=${page}`);
-  const data = await response.json();
-
-  return await data.results;
-};
-
 const getCharacterbyUrl = async (url) => {
   const response = await fetch(url);
   const data = await response.json();
@@ -28,31 +21,37 @@ const getCharacterbyUrl = async (url) => {
 const getHomeWorld = async (url) => {
   const response = await fetch(url);
   const data = await response.json();
-  return await data.name;
+  return data;
 };
 
 const getFilmsbyUrl = async (url) => {
   const response = await fetch(url);
   const data = await response.json();
-  return await data.title;
+  return data;
 };
 
 const getSpeciesbyUrl = async (url) => {
   const response = await fetch(url);
   const data = await response.json();
-  return await data.name;
+  return data;
 };
 
 const getVehiclesbyUrl = async (url) => {
   const response = await fetch(url);
   const data = await response.json();
-  return await data.name;
+  return data;
 };
 
 const getStarshipsbyUrl = async (url) => {
   const response = await fetch(url);
   const data = await response.json();
-  return await data.name;
+  return data;
+};
+
+const getCharacters = async (page) => {
+  const response = await fetch(`https://swapi.dev/api/people/?page=${page}`);
+  const data = await response.json();
+  return await data.results;
 };
 
 const getPlanets = async (page = 1) => {
