@@ -1,5 +1,4 @@
 import { showProgress, hideProgress } from "./UI";
-import { getStarships, getPlanets, getCharacters } from "../services/swapi";
 
 const fetchResource = async (
   page,
@@ -72,4 +71,32 @@ const createLoadButtonEventListener = (
   });
 };
 
-export { fetchResource, createLoadButtonEventListener };
+const containerEventLister = (container, closestClass, locationPage) => {
+  container.addEventListener("click", async (e) => {
+    const closestTarget = e.target.closest(closestClass);
+    if (closestTarget) {
+      const url = closestTarget.dataset.url;
+      const type = closestTarget.dataset.type;
+      const encodeUrl = encodeURIComponent(url);
+      const encodeType = encodeURIComponent(type);
+      window.location.href = `./${locationPage}.html?dataUrl=${encodeUrl}&type=${encodeType}`;
+    }
+  });
+};
+
+const mainTemplate = (id, template) => {
+  const main = document.querySelector("main");
+  if (main.hasAttribute("id")) {
+    main.removeAttribute("id");
+  } else {
+    main.setAttribute("id", id);
+  }
+  main.insertAdjacentHTML("afterbegin", template());
+};
+
+export {
+  fetchResource,
+  createLoadButtonEventListener,
+  containerEventLister,
+  mainTemplate,
+};
