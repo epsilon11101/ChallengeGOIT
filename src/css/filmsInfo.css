@@ -21,13 +21,15 @@
     height: 100%;
     display: flex;
     flex-direction: row;
+    flex-direction: row-reverse;
     justify-content: center;
     align-items: center;
+
 }
 
 #filmsInfo #infoWrapper #film img {
     width: 50%;
-    height: 100%;
+    height: 50%;
     object-fit: cover;
     box-shadow: 0 0 1rem blue;
 }
@@ -44,7 +46,7 @@
 
 }
 
-#filmsInfo #infoWrapper #film #film_info {
+#filmsInfo #infoWrapper #film .film_info {
     width: 100%;
     height: 100%;
     display: flex;
@@ -59,7 +61,7 @@
     color: #FFE81F;
 }
 
-#filmsInfo #infoWrapper #infoContainer {
+#infoContainerCard {
     width: 100%;
     height: 100%;
     display: flex;
@@ -67,28 +69,28 @@
     justify-content: space-between;
     align-items: center;
     gap: 2rem;
-
+    flex-wrap: wrap;
 
 }
 
-#filmsInfo #infoWrapper #infoContainer #characters {
+#infoContainerCard .card {
 
     width: 30% !important;
     background-color: transparent;
-    border-color: purple;
-    box-shadow: 0 0 1rem purple;
+    border-color: blue;
+    box-shadow: 0 0 1rem blue;
     padding: 1rem;
 }
 
-#filmsInfo #infoWrapper #infoContainer #characters .card-title {
+#infoContainerCard .card .card-title {
     text-align: center;
     text-transform: lowercase;
     font-size: 2rem;
     font-family: "starjhol";
-    color: purple;
+    color: blue;
 }
 
-#filmsInfo #infoWrapper #infoContainer #characters .card-body {
+#infoContainerCard .card .card-body {
     width: 100%;
     height: 100%;
     display: flex;
@@ -102,7 +104,7 @@
 }
 
 
-#filmsInfo #infoWrapper #infoContainer #characters .card-body ul {
+#infoContainerCard .card .card-body ul {
 
     display: flex;
     justify-content: flex-start;
@@ -114,18 +116,19 @@
     background-color: transparent;
 }
 
-#filmsInfo #infoWrapper #infoContainer #characters .card-body ul li {
+#infoContainerCard .card .card-body ul li {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: 1rem;
-    min-width: 100%;
-    min-height: 100%;
+    min-width: 40%;
+    height: 200px;
     text-align: center;
+
 }
 
-#filmsInfo #infoWrapper #infoContainer #characters .card-body ul li .avatarWrapper {
+#infoContainerCard .card .card-body ul li .avatarWrapper {
     width: 100%;
     height: 100%;
     display: flex;
@@ -140,11 +143,17 @@
     margin-top: 1rem;
 }
 
-#filmsInfo #infoWrapper #infoContainer #characters .card-body ul li img {
+#infoContainerCard .card .card-body ul li p {
+    width: 100%;
+    height: 20%;
+    text-transform: uppercase;
+}
+
+#infoContainerCard .card .card-body ul li img {
     width: 80px;
     height: 80px;
     object-fit: cover;
-    box-shadow: 0 0 1rem purple;
+    box-shadow: 0 0 1rem blue;
     border-radius: 50%;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }

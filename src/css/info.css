@@ -4,26 +4,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
 }
 
-#characters_info h2 {
-    font-size: 2rem;
-    font-family: "starjedi";
-    text-align: center;
-    width: 100%;
-    text-transform: lowercase;
-}
+
+
 
 #characterWrapper {
     width: 80%;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 2rem;
 }
 
 #character {
@@ -69,8 +59,7 @@
 
 }
 
-#infoContainer {
-
+#infoContainerCard {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -79,22 +68,14 @@
     flex-wrap: wrap;
 }
 
-#infoContainer div {
-    width: 30%;
-    height: 350px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding-left: 1rem;
-    text-transform: uppercase;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.8rem;
-    color: #FFE81F;
-    gap: 1rem;
-    border: 1px solid #FFE81F;
-    border-radius: 5%;
-    box-shadow: 0 0 1rem #FFE81F;
+/* OVERRIDE COMMON STYLES */
+#infoContainerCard .card,
+#infoContainerCard .avatarWrapper img {
+    border-color: #FFE81F !important;
+    box-shadow: 0 0 1rem #FFE81F !important;
+}
 
+#infoContainerCard .card-title {
 
+    color: #FFE81F !important;
 }
