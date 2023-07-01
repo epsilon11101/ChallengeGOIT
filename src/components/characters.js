@@ -1,5 +1,9 @@
 import "../css/characters.css";
-import { fetchResource, createLoadButtonEventListener } from "./common";
+import {
+  fetchResource,
+  createLoadButtonEventListener,
+  containerEventLister,
+} from "./common";
 import { getCharacters } from "../services/swapi";
 import { progressTemplate } from "./UI";
 
@@ -27,7 +31,7 @@ const characterTemplate = (character, id) => {
 
   return `
   <div class="uniqueCharacter ">
-        <p class="pcollapse" data-url=${url}>
+        <p class="pcollapse" data-url=${url} data-type="character">
             <a class="btn " role="button" >${name}</a>
         </p>
         <div class="col">
@@ -76,12 +80,4 @@ fetchResource(
   main
 );
 
-charactersContainer.addEventListener("click", (e) => {
-  const character = e.target.closest(".pcollapse");
-  if (character) {
-    const characterUrl = character.dataset.url;
-    const encodedUrl = encodeURIComponent(characterUrl);
-    console.log(encodedUrl);
-    window.location.href = `./info.html?character=${encodedUrl}`;
-  }
-});
+containerEventLister(charactersContainer, ".pcollapse", "info");
