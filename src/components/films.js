@@ -1,5 +1,9 @@
 import "../css/films.css";
-import { fetchResource, createLoadButtonEventListener } from "./common";
+import {
+  fetchResource,
+  createLoadButtonEventListener,
+  containerEventLister,
+} from "./common";
 import { getFilms } from "../services/swapi";
 import { progressTemplate } from "./UI";
 
@@ -20,11 +24,12 @@ const filmsTemplate = (film, id) => {
     release_date,
     title: name,
     opening_crawl,
+    url,
   } = film;
 
   return `
       <div class="uniqueFilm ">
-            <p class="pcollapse">
+            <p class="pcollapse" data-url=${url} data-type="film">
                 <a class="btn " role="button">${name}</a>
             </p>
             <div class="col">
@@ -65,3 +70,5 @@ createLoadButtonEventListener(
 );
 
 fetchResource(1, getFilms, filmsContainer, filmsTemplate, spinner, main);
+
+containerEventLister(filmsContainer, ".pcollapse", "info");
