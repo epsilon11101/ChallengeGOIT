@@ -13,41 +13,15 @@
             crossorigin="anonymous" />
         <link rel="stylesheet" href="../css/fonts.css" />
         <link rel="stylesheet" href="../css/style.css" />
+
     </head>
     <body>
         <header id="header" class="container-fluid"></header>
         <main>
         </main>
+
         <script type="module" src="../components/header.js"></script>
-
-        <script>
-        window.addEventListener('load', function() {
-            const queryString = window.location.search;
-            const urlParams = new URLSearchParams(queryString);
-            let script = document.createElement('script');
-            script.type = 'module';
-            const urlP = urlParams.get("dataUrl");
-            const typeP = urlParams.get("type");
-
-            console.log(typeP,urlP);
-
-
-            switch(typeP){
-                case "character":
-                    script.src = "../components/info.js";
-                    document.body.appendChild(script);
-                    break;
-                case "film":
-                    script.src = "../components/filmsInfo.js";
-                    document.body.appendChild(script);
-                    break;
-            }
-
-        }
-        )
-
-    </script>
-
+        <script type="module" src="../components/mainInfo.js"></script>
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
