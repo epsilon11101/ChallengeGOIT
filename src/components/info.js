@@ -13,24 +13,17 @@ import { fetchImage } from "../services/fetchimg";
 import { mainTemplate } from "./common";
 import { showProgress, hideProgress, progressTemplate } from "./UI";
 
-// query params
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
-const characterUrl = urlParams.get("dataUrl");
-const decodeUrl = decodeURIComponent(characterUrl);
+import errorImage from "../assets/error.jpg";
 
 //main template
 mainTemplate("characters_info", template);
 
 //containers
-const infoContainer = document.querySelector("#characterWrapper #character");
+let infoContainer;
 //este contiene todos los ul
-const dataContainer = document.querySelector(
-  "#characterWrapper #infoContainerCard"
-);
-const wrapperContainer = document.querySelector("#characterWrapper");
-wrapperContainer.insertAdjacentHTML("afterbegin", progressTemplate());
-const spinner = document.querySelector("#characterWrapper .spinner");
+let dataContainer;
+let wrapperContainer;
+let spinner;
 
 function template() {
   return `
@@ -83,7 +76,7 @@ const InfoTemplate = async (data, param) => {
       `https://starwars-visualguide.com/assets/img/${param}/${id}.jpg`
     );
     if (url === "404") {
-      url = "../assets/error.jpg";
+      url = errorImage;
     }
 
     return `
@@ -174,4 +167,19 @@ const decodeInfo = async (url) => {
   hideProgress(spinner);
 };
 
-decodeInfo(decodeUrl);
+export function init() {
+  // query params
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const characterUrl = urlParams.get("dataUrl");
+  const decodeUrl = decodeURIComponent(characterUrl);
+  infoContainer = document.querySelector("#characterWrapper #character");
+  //este contiene todos los ul
+  dataContainer = document.querySelector(
+    "#characterWrapper #infoContainerCard"
+  );
+  wrapperContainer = document.querySelector("#characterWrapper");
+  wrapperContainer.insertAdjacentHTML("afterbegin", progressTemplate());
+  spinner = document.querySelector("#characterWrapper .spinner");
+  decodeInfo(decodeUrl);
+}
