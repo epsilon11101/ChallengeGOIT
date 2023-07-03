@@ -125,44 +125,49 @@ const decodeInfo = async (url) => {
   );
   const homeWorldInfo = await getHomeWorld(homeworld);
 
-  dataContainer.insertAdjacentHTML("afterbegin", cardTemplate("HomeWorld"));
-  dataContainer.insertAdjacentHTML("afterbegin", cardTemplate("Films"));
-  dataContainer.insertAdjacentHTML("afterbegin", cardTemplate("Species"));
-  dataContainer.insertAdjacentHTML("afterbegin", cardTemplate("Vehicles"));
-  dataContainer.insertAdjacentHTML("afterbegin", cardTemplate("Starships"));
-
-  const cardHomeWorld = document.querySelector("#card_HomeWorld");
-  const cardFilms = document.querySelector("#card_Films");
-  const cardSpecies = document.querySelector("#card_Species");
-  const cardVehicles = document.querySelector("#card_Vehicles");
-  const cardStarships = document.querySelector("#card_Starships");
-
   infoContainer.insertAdjacentHTML("afterbegin", infoTemplate(character));
-
+  dataContainer.insertAdjacentHTML("afterbegin", cardTemplate("HomeWorld"));
+  const cardHomeWorld = document.querySelector("#card_HomeWorld");
   cardHomeWorld.insertAdjacentHTML(
     "afterbegin",
     await InfoTemplate([homeWorldInfo], "planets")
   );
 
-  cardFilms.insertAdjacentHTML(
-    "afterbegin",
-    await InfoTemplate(allFilms, "films")
-  );
+  if (allFilms.length > 0) {
+    dataContainer.insertAdjacentHTML("afterbegin", cardTemplate("Films"));
+    const cardFilms = document.querySelector("#card_Films");
+    cardFilms.insertAdjacentHTML(
+      "afterbegin",
+      await InfoTemplate(allFilms, "films")
+    );
+  }
 
-  cardSpecies.insertAdjacentHTML(
-    "afterbegin",
-    await InfoTemplate(allSpecies, "species")
-  );
+  if (allSpecies.length > 0) {
+    dataContainer.insertAdjacentHTML("afterbegin", cardTemplate("Species"));
+    const cardSpecies = document.querySelector("#card_Species");
+    cardSpecies.insertAdjacentHTML(
+      "afterbegin",
+      await InfoTemplate(allSpecies, "species")
+    );
+  }
 
-  cardVehicles.insertAdjacentHTML(
-    "afterbegin",
-    await InfoTemplate(allVehicles, "vehicles")
-  );
+  if (allVehicles.length > 0) {
+    dataContainer.insertAdjacentHTML("afterbegin", cardTemplate("Vehicles"));
+    const cardVehicles = document.querySelector("#card_Vehicles");
+    cardVehicles.insertAdjacentHTML(
+      "afterbegin",
+      await InfoTemplate(allVehicles, "vehicles")
+    );
+  }
 
-  cardStarships.insertAdjacentHTML(
-    "afterbegin",
-    await InfoTemplate(allStarships, "starships")
-  );
+  if (allStarships.length > 0) {
+    dataContainer.insertAdjacentHTML("afterbegin", cardTemplate("Starships"));
+    const cardStarships = document.querySelector("#card_Starships");
+    cardStarships.insertAdjacentHTML(
+      "afterbegin",
+      await InfoTemplate(allStarships, "starships")
+    );
+  }
 
   hideProgress(spinner);
 };
