@@ -1,5 +1,6 @@
 import "../css/filmsInfo.css";
 import { fetchImage } from "../services/fetchimg";
+import errorImage from "../assets/error.jpg";
 import {
   getCharacterbyUrl,
   getHomeWorld,
@@ -11,24 +12,12 @@ import {
 import { mainTemplate } from "./common";
 import { showProgress, hideProgress, progressTemplate } from "./UI";
 
-// query params
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
-const filmUrl = urlParams.get("dataUrl");
-const decodeUrl = decodeURIComponent(filmUrl);
+const allFilmsImages = import.meta.globEager("../assets/films/*.jpg");
 
-// params: main id and func: template
-mainTemplate("filmsInfo", template);
-// film containers
-
-const mainInfoContainer = document.querySelector("#infoWrapper");
-const infoContainer = document.querySelector("#infoWrapper #film");
-const filmCardContainer = document.querySelector(
-  "#infoWrapper #infoContainerCard"
-);
-
-mainInfoContainer.insertAdjacentHTML("afterbegin", progressTemplate());
-const spinner = document.querySelector("#infoWrapper .spinner");
+let mainInfoContainer;
+let infoContainer;
+let filmCardContainer;
+let spinner;
 
 //main template
 function template() {
@@ -54,7 +43,9 @@ const filmTemplate = (film) => {
           <p>Producer: ${producer}</p>
           <p>Release: ${release_date}</p>
         </div>
-        <img src="../assets/films/${episode_id}.jpg" />
+        <img src="${
+          allFilmsImages[`../assets/films/${episode_id}.jpg`].default
+        }" />
     `;
 };
 
@@ -79,7 +70,7 @@ const InfoTemplate = async (data, param) => {
       `https://starwars-visualguide.com/assets/img/${param}/${id}.jpg`
     );
     if (url === "404") {
-      url = "../assets/error.jpg";
+      url = errorImage;
     }
 
     return `
@@ -174,4 +165,20 @@ const decodeInfo = async (url) => {
   );
 };
 
-decodeInfo(decodeUrl);
+// query params
+export function init() {
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const filmUrl = urlParams.get("dataUrl");
+  const decodeUrl = decodeURIComponent(filmUrl);
+  // params: main id and func: template
+  mainTemplate("filmsInfo", template);
+  // film containers
+
+  mainInfoContainer = document.querySelector("#infoWrapper");
+  infoContainer = document.querySelector("#infoWrapper #film");
+  filmCardContainer = document.querySelector("#infoWrapper #infoContainerCard");
+  mainInfoContainer.insertAdjacentHTML("afterbegin", progressTemplate());
+  spinner = document.querySelector("#infoWrapper .spinner");
+  decodeInfo(decodeUrl);
+}
