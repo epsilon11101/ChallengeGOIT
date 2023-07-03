@@ -86,11 +86,9 @@ const containerEventLister = (container, closestClass, locationPage) => {
 
 const mainTemplate = (id, template) => {
   const main = document.querySelector("main");
-  if (main.hasAttribute("id")) {
-    main.removeAttribute("id");
-  } else {
-    main.setAttribute("id", id);
-  }
+  main.innerHTML = "";
+  main.removeAttribute("id");
+  main.setAttribute("id", id);
   main.insertAdjacentHTML("afterbegin", template());
 };
 
