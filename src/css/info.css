@@ -30,9 +30,9 @@
     align-items: center;
     gap: 2rem;
     text-transform: lowercase;
-    font-family: "starjedi";
+    font-family: "starjhol";
     font-size: 2rem;
-    color: #FFE81F;
+    color: blue;
 }
 
 #character .image img {
@@ -41,7 +41,7 @@
     border-radius: 5%;
     object-fit: cover;
     object-position: center;
-    box-shadow: 0 0 1rem #FFE81F;
+    box-shadow: 0 0 1rem blue;
 }
 
 #character .info {
@@ -54,7 +54,7 @@
     padding-left: 1rem;
     font-family: "monospace";
     font-size: 1rem;
-    color: #FFE81F;
+    color: blue;
     text-transform: capitalize;
 
 }
@@ -66,16 +66,4 @@
     align-items: center;
     gap: 3rem;
     flex-wrap: wrap;
-}
-
-/* OVERRIDE COMMON STYLES */
-#infoContainerCard .card,
-#infoContainerCard .avatarWrapper img {
-    border-color: #FFE81F !important;
-    box-shadow: 0 0 1rem #FFE81F !important;
-}
-
-#infoContainerCard .card-title {
-
-    color: #FFE81F !important;
 }
