@@ -1,3 +1,4 @@
+import "../css/filmsInfo.css";
 import "../css/films.css";
 import {
   fetchResource,
@@ -7,13 +8,11 @@ import {
 import { getFilms } from "../services/swapi";
 import { progressTemplate } from "./UI";
 
-localStorage.setItem("contador", "1");
+sessionStorage.setItem("contador", "1");
 
 const main = document.querySelector("main");
 main.insertAdjacentHTML("afterbegin", progressTemplate());
 const filmsContainer = document.querySelector("#filmsContainer");
-const loadMoreBtn = document.querySelector("#load_more");
-const loadLessBtn = document.querySelector("#load_less");
 const spinner = document.querySelector(".spinner");
 
 const filmsTemplate = (film, id) => {
@@ -51,23 +50,6 @@ const filmsTemplate = (film, id) => {
       <div>
         `;
 };
-
-createLoadButtonEventListener(
-  loadMoreBtn,
-  getFilms,
-  filmsContainer,
-  filmsTemplate,
-  spinner,
-  main
-);
-createLoadButtonEventListener(
-  loadLessBtn,
-  getFilms,
-  filmsContainer,
-  filmsTemplate,
-  spinner,
-  main
-);
 
 fetchResource(1, getFilms, filmsContainer, filmsTemplate, spinner, main);
 

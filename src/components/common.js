@@ -9,7 +9,6 @@ const fetchResource = async (
   main
 ) => {
   showProgress(spinner);
-  console.log("haciendo peticion a la pagina", page);
   const resources = await getResource(page);
   hideProgress(spinner);
   main.classList.add("showBg");
@@ -26,6 +25,24 @@ const fetchResource = async (
   });
 };
 
+const setSessionStorage = (value, key) => {
+  if (key.includes("characters")) {
+    sessionStorage.setItem("cCharacter", value.toString());
+  }
+  if (key.includes("planets")) {
+    sessionStorage.setItem("cPlanet", value.toString());
+  }
+  if (key.includes("species")) {
+    sessionStorage.setItem("cSpecie", value.toString());
+  }
+  if (key.includes("starships")) {
+    sessionStorage.setItem("cStarship", value.toString());
+  }
+  if (key.includes("vehicles")) {
+    sessionStorage.setItem("cVehicle", value.toString());
+  }
+};
+
 const createLoadButtonEventListener = (
   pageElement,
   getResource,
@@ -35,9 +52,12 @@ const createLoadButtonEventListener = (
   main
 ) => {
   pageElement.addEventListener("click", async () => {
+    const currentLocation = window.location.href;
+
     // Desplazarse al inicio del documento
     window.scrollTo({ top: 0, behavior: "smooth" });
-    let currentPage = parseInt(localStorage.getItem("contador"));
+    let currentPage = parseInt(sessionStorage.getItem("contador"));
+
     if (isNaN(currentPage)) {
       currentPage = 1;
     }
@@ -45,7 +65,10 @@ const createLoadButtonEventListener = (
     if (pageElement.id === "load_more") {
       const nextPage = currentPage >= 9 ? 9 : currentPage + 1;
       pageElement.dataset.page = nextPage;
-      localStorage.setItem("contador", nextPage.toString());
+      sessionStorage.setItem("contador", nextPage.toString());
+
+      setSessionStorage(nextPage, currentLocation);
+
       await fetchResource(
         nextPage,
         getResource,
@@ -58,7 +81,10 @@ const createLoadButtonEventListener = (
       const previousPage = currentPage <= 1 ? 1 : currentPage - 1;
       console.log(currentPage, previousPage);
       pageElement.dataset.page = previousPage;
-      localStorage.setItem("contador", previousPage.toString());
+      sessionStorage.setItem("contador", previousPage.toString());
+
+      setSessionStorage(previousPage, currentLocation);
+
       await fetchResource(
         previousPage,
         getResource,

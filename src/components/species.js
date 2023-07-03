@@ -3,7 +3,7 @@ import { fetchResource, createLoadButtonEventListener } from "./common";
 import { getSpecies } from "../services/swapi";
 import { progressTemplate } from "./UI";
 
-localStorage.setItem("contador", "1");
+sessionStorage.setItem("contador", sessionStorage.getItem("cSpecie") || "1");
 
 const main = document.querySelector("main");
 main.insertAdjacentHTML("afterbegin", progressTemplate());
@@ -69,4 +69,11 @@ createLoadButtonEventListener(
   main
 );
 
-fetchResource(1, getSpecies, speciesContainer, speciesTemplate, spinner, main);
+fetchResource(
+  sessionStorage.getItem("cSpecie") || "1",
+  getSpecies,
+  speciesContainer,
+  speciesTemplate,
+  spinner,
+  main
+);

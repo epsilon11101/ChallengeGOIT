@@ -3,7 +3,7 @@ import { fetchResource, createLoadButtonEventListener } from "./common";
 import { getPlanets } from "../services/swapi";
 import { progressTemplate } from "./UI";
 
-localStorage.setItem("contador", "1");
+sessionStorage.setItem("contador", sessionStorage.getItem("cPlanet") || "1");
 
 const main = document.querySelector("main");
 main.insertAdjacentHTML("afterbegin", progressTemplate());
@@ -70,4 +70,11 @@ createLoadButtonEventListener(
   main
 );
 
-fetchResource(1, getPlanets, planetsContainer, planetTemplate, spinner, main);
+fetchResource(
+  sessionStorage.getItem("cPlanet") || "1",
+  getPlanets,
+  planetsContainer,
+  planetTemplate,
+  spinner,
+  main
+);

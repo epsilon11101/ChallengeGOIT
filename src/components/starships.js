@@ -3,8 +3,7 @@ import { fetchResource, createLoadButtonEventListener } from "./common";
 import { getStarships } from "../services/swapi";
 import { progressTemplate } from "./UI";
 
-localStorage.setItem("contador", "1");
-
+sessionStorage.setItem("contador", sessionStorage.getItem("cStarship") || "1");
 const main = document.querySelector("main");
 main.insertAdjacentHTML("afterbegin", progressTemplate());
 const starshipContainer = document.querySelector("#starshipsContainer");
@@ -73,7 +72,7 @@ createLoadButtonEventListener(
 );
 
 fetchResource(
-  1,
+  sessionStorage.getItem("cStarship") || "1",
   getStarships,
   starshipContainer,
   starshipsTemplate,

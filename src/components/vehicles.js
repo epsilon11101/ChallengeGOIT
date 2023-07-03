@@ -3,7 +3,7 @@ import { fetchResource, createLoadButtonEventListener } from "./common";
 import { getVehicles } from "../services/swapi";
 import { progressTemplate } from "./UI";
 
-localStorage.setItem("contador", "1");
+sessionStorage.setItem("contador", sessionStorage.getItem("cVehicle") || "1");
 
 const main = document.querySelector("main");
 main.insertAdjacentHTML("afterbegin", progressTemplate());
@@ -72,7 +72,7 @@ createLoadButtonEventListener(
 );
 
 fetchResource(
-  1,
+  sessionStorage.getItem("cVehicle") || "1",
   getVehicles,
   vehiclesContainer,
   vehiclesTemplate,

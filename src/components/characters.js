@@ -7,7 +7,7 @@ import {
 import { getCharacters } from "../services/swapi";
 import { progressTemplate } from "./UI";
 
-localStorage.setItem("contador", "1");
+sessionStorage.setItem("contador", sessionStorage.getItem("cCharacter") || "1");
 
 const main = document.querySelector("main");
 main.insertAdjacentHTML("afterbegin", progressTemplate());
@@ -72,7 +72,7 @@ createLoadButtonEventListener(
   main
 );
 fetchResource(
-  1,
+  sessionStorage.getItem("cCharacter") || "1",
   getCharacters,
   charactersContainer,
   characterTemplate,
