@@ -87,3 +87,45 @@
     background-color: rgb(74, 241, 7);
     font-family: "starjedi";
 }
+
+@media screen and (max-width: 767px) {
+
+    #starshipsContainer {
+        gap: 2rem;
+    }
+
+    .uniquestarships .pcollapse {
+        width: 100%;
+    }
+
+    .uniquestarships a {
+        font-size: 0.7rem;
+    }
+
+    .uniquestarships {
+        width: 60%;
+
+    }
+}
+
+/* TABLET */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+
+    #starshipsContainer {
+        gap: 2rem;
+    }
+
+    .uniquestarships .pcollapse {
+        width: 100%;
+    }
+
+    .uniquestarships a {
+        font-size: 0.7rem;
+    }
+
+    .uniquestarships {
+        width: 30%;
+
+    }
+}

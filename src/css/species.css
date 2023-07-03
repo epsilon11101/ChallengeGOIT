@@ -87,3 +87,45 @@
     background-color: rgb(241, 112, 7);
     font-family: "starjedi";
 }
+
+@media screen and (max-width: 767px) {
+
+    #speciesContainer {
+        gap: 2rem;
+    }
+
+    .uniquespecie .pcollapse {
+        width: 100%;
+    }
+
+    .uniquespecie a {
+        font-size: 0.7rem;
+    }
+
+    .uniquespecie {
+        width: 60%;
+
+    }
+}
+
+/* TABLET */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+
+    #speciesContainer {
+        gap: 2rem;
+    }
+
+    .uniquespecie .pcollapse {
+        width: 100%;
+    }
+
+    .uniquespecie a {
+        font-size: 0.7rem;
+    }
+
+    .uniquespecie {
+        width: 30%;
+
+    }
+}

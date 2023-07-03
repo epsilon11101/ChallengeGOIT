@@ -86,3 +86,46 @@
     background-color: red;
     font-family: "starjedi";
 }
+
+
+@media screen and (max-width: 767px) {
+
+    #planetsContainer {
+        gap: 2rem;
+    }
+
+    .uniquePlanet .pcollapse {
+        width: 100%;
+    }
+
+    .uniquePlanet a {
+        font-size: 0.7rem;
+    }
+
+    .uniquePlanet {
+        width: 60%;
+
+    }
+}
+
+/* TABLET */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+
+    #planetsContainer {
+        gap: 2rem;
+    }
+
+    .uniquePlanet .pcollapse {
+        width: 100%;
+    }
+
+    .uniquePlanet a {
+        font-size: 0.7rem;
+    }
+
+    .uniquePlanet {
+        width: 30%;
+
+    }
+}

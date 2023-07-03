@@ -87,3 +87,45 @@
     background-color: rgb(7, 175, 241);
     font-family: "starjedi";
 }
+
+@media screen and (max-width: 767px) {
+
+    #vehiclesContainer {
+        gap: 2rem;
+    }
+
+    .uniquevehicle .pcollapse {
+        width: 100%;
+    }
+
+    .uniquevehicle a {
+        font-size: 0.7rem;
+    }
+
+    .uniquevehicle {
+        width: 60%;
+
+    }
+}
+
+/* TABLET */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+
+    #vehiclesContainer {
+        gap: 2rem;
+    }
+
+    .uniquevehicle .pcollapse {
+        width: 100%;
+    }
+
+    .uniquevehicle a {
+        font-size: 0.7rem;
+    }
+
+    .uniquevehicle {
+        width: 30%;
+
+    }
+}

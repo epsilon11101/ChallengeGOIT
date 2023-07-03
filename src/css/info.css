@@ -67,3 +67,37 @@
     gap: 3rem;
     flex-wrap: wrap;
 }
+
+@media screen and (max-width: 767px) {
+    #character {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    #character .image {
+        width: 100%;
+    }
+
+    #character .info {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+}
+
+/* TABLET */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    #character {
+        margin-bottom: 2rem;
+    }
+
+    #character .image {
+        width: 80%;
+    }
+
+    #character .info {
+        width: 50%;
+
+    }
+}

@@ -4,6 +4,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
 }
 
 #filmsInfo #infoWrapper {
@@ -156,4 +157,42 @@
     box-shadow: 0 0 1rem blue !important;
     border-radius: 50%;
     margin-bottom: 2rem;
+}
+
+
+
+@media screen and (max-width: 767px) {
+
+
+    #filmsInfo #infoWrapper #film {
+        flex-direction: column;
+
+    }
+
+    #filmsInfo #infoWrapper #film img {
+        width: 100%;
+    }
+
+
+    #infoContainerCard .card {
+        width: 100% !important;
+    }
+
+}
+
+/* TABLET */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    #filmsInfo #infoWrapper #film {
+        flex-direction: column;
+
+    }
+
+    #filmsInfo #infoWrapper #film img {
+        width: 50%;
+    }
+
+    #infoContainerCard .card {
+        width: 40% !important;
+    }
+
 }

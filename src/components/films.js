@@ -22,7 +22,6 @@ const filmsTemplate = (film, id) => {
     producer,
     release_date,
     title: name,
-    opening_crawl,
     url,
   } = film;
 
@@ -39,9 +38,7 @@ const filmsTemplate = (film, id) => {
                                 <p>Director: ${director}</p>
                                 <p>Episode: ${episode_id}</p>
                                 <p>Producer: ${producer}</p>
-                                <p>Release: ${release_date}</p>
-                                <p>Description: ${opening_crawl}</p>
-                                
+                                <p>Release: ${release_date}</p>  
                             </div>
                         </div>
                     </div>
